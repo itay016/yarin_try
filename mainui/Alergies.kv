@@ -1,0 +1,45 @@
+#WindowManeger:
+#    BoxLayoutExample:
+#    CameraClick:
+
+#BoxLayoutExample:
+CameraClick:
+
+
+<CameraClick>:
+    orientation: 'vertical'
+    Camera:
+        id: camera
+        resolution: (1080,720)
+        play: False
+    ToggleButton:
+        text: 'Play'
+        on_press: camera.play = not camera.play
+        size_hint_y: None
+        height: '48dp'
+    Button:
+        text: 'Capture'
+        size_hint_y: None
+        height: '48dp'
+        on_press: root.capture()
+    Label:
+        id:lab
+        text:"not pic yet"
+        pos:"200dp","300dp"
+        height: '48dp'
+        size_hint_y: None
+        background_color:1,1,0,0.5
+        #color:1,1,1,1
+
+<BoxLayoutExample>:
+    name:"secon"
+    orientation:"vertical"
+    Button:
+        text:"start"
+    Button:
+        text:"go_to_cam"
+        on_release:app.root.current=cam
+    Label:
+        text:"All allergies words are : "
+
+
